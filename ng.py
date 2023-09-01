@@ -1,8 +1,8 @@
 # Use the random module to help generate the random number
 import random
 
+
 def gameOnce():
-        
     # randint() will generate a random integer between 1-100, assign it to 'number'
     number = random.randint(1, 100)
 
@@ -19,30 +19,32 @@ def gameOnce():
         # Adding Try Catch
         try:
             guess = int(input("Enter Guess: "))
-        catch(Exception e):
+            if (guess < number):
+                print("Guess higher!")
+                steps += 1
+            elif (guess > number):
+                print("Guess lower!")
+                steps += 1
+            else:
+                print("You won!")
+
+        except Exception :
             print("Invalid Input.")
-            break
-        # if the user guesses too lower, tell them to guess higher, if they guess
-        # too high, tell them to guess lower, and if they get it correct tell
-        # them they've won
-        if (guess < number):
-            print("Guess higher!")
-            steps += 1
-        elif (guess > number):
-            print("Guess lower!")
-            steps += 1
-        else:
-            print("You won!")
-            return steps
+            return 20
+    # if the user guesses too lower, tell them to guess higher, if they guess
+    # too high, tell them to guess lower, and if they get it correct tell
+    # them they've won
+
+    return steps
 
 
 gameNo = 0
 toatalscore = 0
 
-while(gameNo < 3):
+while (gameNo < 3):
     gameNo += 1
     sc = gameOnce()
     toatalscore += sc
-    print("Game No : "+ str(gameNo+1) + "Score = " + sc)
+    print("Game No : " + str(gameNo + 1) + "Score = " + str(sc))
 
 print("Total Game Score : " + str(toatalscore))
