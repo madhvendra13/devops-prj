@@ -29,7 +29,7 @@ def gameOnce():
                 print("You won!")
 
         except Exception :
-            print("Invalid Input.")
+            print("Bad Query.")
             return 20
     # if the user guesses too lower, tell them to guess higher, if they guess
     # too high, tell them to guess lower, and if they get it correct tell
